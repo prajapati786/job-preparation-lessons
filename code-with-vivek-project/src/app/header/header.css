@@ -1,0 +1,22 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+ul {
+    width: 200px;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+.active {
+    background-color: brown;
+    border-radius: 5px;
+}

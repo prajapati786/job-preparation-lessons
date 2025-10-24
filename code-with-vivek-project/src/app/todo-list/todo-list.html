@@ -1,0 +1,14 @@
+<div class="container" style="text-align: center;">
+
+
+    <p>todo-list works!</p>
+    <input type="text" [(ngModel)]="task" placeholder="Enter Task Name">
+    <button (click)="addTask()">Add Task</button>
+    @for (item of userList; track item.id;let i= $index) {
+    <ul class="task-list">
+        <li>Index Of User{{i+1}}</li>
+        <li>Task Name {{item.task}}</li>
+        <li><button (click)="DeleteUser(item.id)">Delete</button></li>
+    </ul>
+    }
+</div>

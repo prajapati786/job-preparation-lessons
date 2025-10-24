@@ -1,0 +1,20 @@
+.btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    margin: 10px;
+    cursor: pointer;
+    color: black;
+}
+
+.colorRed {
+    background-color: red;
+}
+
+.colorBlue {
+    background-color: rgb(164, 164, 171);
+}
+
+.colorGreen {
+    background-color: green;
+}

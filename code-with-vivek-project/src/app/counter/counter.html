@@ -1,0 +1,89 @@
+<h1 style="color: blue;background-color: pink; text-align: center;">Navya</h1>
+<h1 style="text-align: center;">This Is The Counter Hare {{counter}}</h1>
+<div style="text-align: center;">
+
+    <button class="btn colorRed" (click)="DeCrease()">DeCrease</button>
+
+    <button class="btn colorBlue" (click)="Reset()">Reset</button>
+
+
+    <button class="btn colorGreen" (click)="InCrease()">InCrease</button>
+
+</div>
+
+@if(false){
+<div style="width: 200px;height: 100px;background-color: orange;border-radius:10px;">
+    <h1 style="margin: auto;">Hello Vivek</h1>
+</div>
+}
+
+
+<div>
+    <button class="btn" (click)="Color('green')">Green</button>
+    <button class="btn" (click)="Color('red')">Red</button>
+    <button class="btn" (click)="Color('white')">White</button>
+    <button class="btn" (click)="Color('yellow')">Yellow</button>
+    <button class="btn" (click)="Color('orange')">Orange</button>
+    <button class="btn" (click)="Color('black')">Black</button>
+</div>
+
+<div [ngSwitch]="color">
+    <h1 [ngStyle]="{'background-color': color}" *ngSwitchCase="'green'">Green Color</h1>
+    <h2 [ngStyle]="{'background-color': color}" *ngSwitchCase="'red'">Red Color</h2>
+    <h3 [ngStyle]="{'background-color': color}" *ngSwitchCase="'white'">White Color</h3>
+    <h4 [ngStyle]="{'background-color': color}" *ngSwitchCase="'yellow'">Yellow Color</h4>
+    <h5 [ngStyle]="{'background-color': color}" *ngSwitchCase="'orange'">Orange Color</h5>
+    <h6 [ngStyle]="{'background-color': color}" *ngSwitchCase="'black'">Black Color</h6>
+
+    <p *ngSwitchDefault>Please select a valid color.</p>
+</div>
+
+<hr>
+
+<div>
+    <table border="1" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>User Name</th>
+                <th>Total Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr *ngFor="let user of UserList; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ user }}</td>
+            </tr> -->
+            @for(user of UserList;track user;let i =$index){
+            <tr>
+                <!-- @if($first || $last){
+                <td style="background-color: aqua;">{{i + 1}}</td>
+                <td>{{user}}</td>
+                <td>{{$count}}</td>
+                }@else{
+                <td>{{i + 1}}</td>
+                <td>{{user}}</td>
+                <td>{{$count}}</td>
+                } -->
+
+                @if($odd){
+                <td style="background-color: aqua;">{{i}}</td>
+                <td>{{user}}</td>
+                <td>{{$count}}</td>
+                }@else if($even){
+                <td style="background-color: orange;">{{i}}</td>
+                <td>{{user}}</td>
+                <td>{{$count}}</td>
+                }
+
+
+
+            </tr>
+            }
+            @empty(){
+            <h1>No User Found</h1>
+            }
+
+        </tbody>
+    </table>
+</div>
