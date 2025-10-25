@@ -1,1 +1,64 @@
-<p>login works!</p>
+<form action="" style="text-align: center;">
+    <!-- <h1 style="background-color: aqua;">Login Page</h1>
+    <input type="text" placeholder="Enter Email" [formControl]="email">
+    <br><br>
+    <input type="password" placeholder="Enter Password" [formControl]="password">
+    <br><br>
+    <button type="button" (click)="submit()">Submit</button> -->
+</form>
+
+<!-- <div style="text-align: center;">
+    <h2>User List</h2>
+    @for(user of UserData;track user;let i =$index){
+    <table border="1" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email Id</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.password}}</td>
+                <td><button (click)="Update(user.email)">Update Data</button></td>
+            </tr>
+        </tbody>
+    </table>
+    }
+
+</div> -->
+
+<form style="text-align: center;" (submit)="submit1()" [formGroup]="loginForm">
+    <h1>Form Builder</h1>
+    <input type="text" placeholder="Enter Name" formControlName="name">
+    @if(name?.hasError("required")){
+    <span class="error">Name is required</span>
+    }
+
+    @if (name?.invalid && (name?.dirty || name?.touched)) {
+    <span class="error">Provide Valid Name</span>
+
+    }
+    <br><br>
+    <input type="number" placeholder="Enter Age" formControlName="age">
+    @if(age?.hasError("required")){
+    <span class="error">Age is required</span>
+    }
+    @if (age?.invalid && (age?.dirty || age?.touched)) {
+    <span class="error">Provide Valid Age</span>
+    }
+    <br><br>
+    <input type="text" placeholder="Enter Email" formControlName="email">
+    @if(email?.hasError("required")){
+    <span class="error">Age is required</span>
+    }
+    @if (email?.invalid && (email?.dirty || email?.touched)) {
+    <span class="error">Provide Valid Email</span>
+    }
+    <br><br>
+    <button>Submit</button>
+
+</form>
