@@ -1,5 +1,6 @@
 <nav>
     <h2>LoGO</h2>
+    <h1>{{user}}</h1>
 
     <ul class="rout-link">
         <li>
@@ -19,3 +20,7 @@
         </li>
     </ul>
 </nav>
+
+
+<button (click)="getUser.emit(userList)">Step 1</button>
+<button (click)="onClickEmit()">Step 2</button>

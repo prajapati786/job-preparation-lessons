@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -7,6 +7,21 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
-export class Header {
+export class Header implements OnInit {
+
+  ngOnInit(): void {
+
+  }
+
+  onClickEmit() {
+    this.getUser.emit(this.userList)
+  }
+
+  @Input() user: string = ''
+
+
+  @Output() getUser = new EventEmitter()
+  userList: string[] = ["Vivek", "Fenil", "Vihar", "Dilip", "Jay"]
+
 
 }

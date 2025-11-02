@@ -1,2 +1,14 @@
-<app-header></app-header>
+<!-- <app-header [user]="selectedvalue"></app-header> -->
+<app-header (getUser)="handleUser($event)"></app-header>
 <router-outlet />
+
+<select [(ngModel)]="selectedvalue">
+    <option value="Prajapati">Vivek</option>
+    <option value="Dhimmar">Dhaval</option>
+    <option value="Marvadi">Naresh</option>
+    <option value="Makvana">Jaymin</option>
+</select>
+
+@for(user of users;track user;){
+<h1>User Name:{{user}}</h1>
+}
